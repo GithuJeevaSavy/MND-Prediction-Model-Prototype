@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <a class="navbar-brand" href="#" style="background-color:navy;padding-right: 30px;font-size:x-large;">
+                  MND REGISTERS
+              </a>
+            <div class="sidebar-sticky" style="background-color:rgb(224, 212, 210)">
+                <ul class="nav flex-column">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="/home">
+                            <span data-feather="home"></span> About Prediction Model <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/detailsform">
+                            <span data-feather="file"></span> Data Entry
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/patientregister">
+                            <span data-feather="shopping-cart"></span> Patient Register
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="/clinicaltrials">
+                            <span data-feather="users"></span> Clinical Trials
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" (click)="signout()">
+                            <span data-feather="users"></span> Sign Out
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="col-md-10 offset-md-2">
+
+            <router-outlet></router-outlet>
+
+
+        </div>
+    </div>
+</div>

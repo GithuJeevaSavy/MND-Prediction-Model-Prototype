@@ -1,0 +1,256 @@
+<!-- <div class="row"> -->
+
+
+<div class="col-sm-12">
+    <div class="mat-card col-sm-12">
+        <div class="card-header col-sm-12" style="background-color:navy;color: white;">
+            <strong>Personal Details</strong>
+            <label style="padding-left: 500px;" for="name"><strong>Patient ID: </strong></label>
+            <label style="padding-left: 10px;" for="name"><strong>PID_{{patientidnumber}}</strong></label>
+
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="name"> <strong>First Name</strong> </label>
+                        <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="firstname" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="name"><strong>Last Name</strong></label>
+                        <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="lastname" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="form-group col-sm-4">
+                    <label for="ccmonth"><strong>Gender</strong></label>
+                    <select class="form-control" id="gender" [(ngModel)]="selectedgender" [ngModelOptions]="{standalone: true}">
+                <option>-Select-</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="date-input"><strong>Date of Birth</strong></label>
+                    <div>
+                        <input class="form-control" id="date-input" (change)="getAge()" type="date" name="date-input" placeholder="date" [(ngModel)]="dateofbirth" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="age"><strong>Age</strong></label>
+                        <input type="text" class="form-control" placeholder="Age" [(ngModel)]="age" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <!--/.row-->
+
+            <div class="row">
+
+                <div class="form-group col-sm-6">
+                    <label for="company"><strong>Address Line 1</strong></label>
+                    <input type="text" class="form-control" id="company" placeholder="Address Line 1" [(ngModel)]="address" [ngModelOptions]="{standalone: true}">
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label for="street"><strong>Address Line 2 </strong></label>
+                    <input type="text" class="form-control" id="street" placeholder="Address Line 2" [(ngModel)]="street" [ngModelOptions]="{standalone: true}">
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="form-group col-sm-4">
+                    <label for="city"><strong>City</strong></label>
+                    <input type="text" class="form-control" id="city" placeholder="City" [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="postal-code"><strong>Postal Code</strong></label>
+                    <input type="text" class="form-control" id="postal-code" placeholder="Postal Code" [(ngModel)]="postcode" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="country"><strong>Country</strong></label>
+                    <input type="text" class="form-control" id="country" placeholder="Country name" [(ngModel)]="country" [ngModelOptions]="{standalone: true}">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group col-sm-6">
+                    <label for="phone"><strong>Phone 1</strong></label>
+                    <input type="text" class="form-control" id="phone1" placeholder="Phone Number" [(ngModel)]="phone1" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="phone"><strong>Phone 2(Next of Kin)</strong></label>
+                    <input type="text" class="form-control" id="phone2" placeholder="Next of Kin Phone Number" [(ngModel)]="phone2" [ngModelOptions]="{standalone: true}">
+                </div>
+
+            </div>
+            <!--/.row-->
+
+        </div>
+    </div>
+</div>
+<!--/.col-->
+
+<div class="col-sm-12">
+    <div class="mat-card col-sm-12" name="mnd">
+        <div class="card-header" style="background-color: navy;color: white;">
+            <strong>Prediction Model Details</strong>
+        </div>
+        <div class="card-body" style="font-weight: bold;">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="ccmonth">Select Cohort</label>
+                    <select class="form-control" id="cohort" [(ngModel)]="selectedcohort" [ngModelOptions]="{standalone: true}">
+                    <option>-Select-</option>
+                  <option>Leuven, Belgium</option>
+                  <option>Limoges, France</option>
+                  <option>Tours, France</option>
+                  <option>Hannover, Germany</option>
+                  <option>Jena, Germany</option>
+                  <option>Dublin, Ireland</option>
+                  <option>Torino, Italy</option>
+                  <option>Utrecht, Netherlands</option>
+                  <option>Lisbon, Portugal</option>
+                  <option>St Gallen, Switzerland</option>
+                  <option>London, UK</option>
+                  <option>Sheffield, UK</option>
+                  <option>Oxford, UK</option>
+
+                </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="date-input">Date of Entry</label>
+                    <div>
+                        <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" [(ngModel)]="currentdate" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <!--/.row-->
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label for="Escorial">El-Escorial</label>
+                    <select class="form-control" id="Escorial" [(ngModel)]="selectedelescorial" [ngModelOptions]="{standalone: true}">
+                    <option>-Select-</option>
+                  <option>Definite</option>
+                  <option>Possible</option>
+                  <option>Probable</option>
+                  <option>Suspected</option>
+                </select>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="siteofonset">Site of Onset</label>
+                    <select class="form-control" id="siteofonset" [(ngModel)]="selectedsiteofonset" [ngModelOptions]="{standalone: true}">
+                    <option>-Select-</option>
+                  <option>Spinal</option>
+                  <option>Bulbar</option>
+                  <option>Respiratory</option>
+                  <option>Mixed Bulbar/Spinal</option>
+
+                  <option>Generalized</option>
+                  <option>Unknown</option>
+
+
+                </select>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="date-input">Date of Symptom Onset</label>
+                    <div>
+                        <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" [(ngModel)]="dateofonset" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="Dementia">Presence of Dementia</label>
+                    <select class="form-control" id="Dementia" [(ngModel)]="selecteddementia" [ngModelOptions]="{standalone: true}">
+                    <option>-Select-</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="C9orf72">C9orf72 Repeat Expansion</label>
+                    <select class="form-control" id="C9orf72" [(ngModel)]="selectedc9orf72" [ngModelOptions]="{standalone: true}">
+                    <option>-Select-</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+                </div>
+
+            </div>
+            <!--/.row-->
+            <div *ngIf="show">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="date-input">Date of Diagnosis</label>
+                        <div>
+                            <input class="form-control" id="date-input" type="date" name="date-input" (change)="populateonsettodiagnosis()" placeholder="date" [(ngModel)]="dateofdiagnosis" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="date-input">Date of Death</label>
+                        <div>
+                            <input class="form-control" id="date-input" type="date" (change)="populatebothvalues()" name="date-input" placeholder="date" [(ngModel)]="dateofdeath" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                </div>
+                <!--/.row-->
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="onsettodiagnosis">Onset to Diagnosis(Months)</label>
+                        <input type="text" class="form-control" id="onsettodiagnosis" placeholder="" [(ngModel)]="onsettodiagnosis" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="onsettodeath">Onset to Death(Months)</label>
+                        <input type="text" class="form-control" id="onsettodeath" placeholder="" [(ngModel)]="onsettodeath" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="diagnosistodeath">Diagnosis to Death(Months)</label>
+                        <input type="text" class="form-control" id="diagnosistodeath" placeholder="" [(ngModel)]="diagnosistodeath" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+
+            <div class="row">
+
+                <div class="form-group col-sm-4">
+                    <button mat-raised-button color="success" (click)="toggle()" id="bt">{{buttonName}}</button>
+
+                </div>
+                <div class="form-group col-sm-8" style="padding-left: 232px;">
+                    <a href="/home"> <button mat-raised-button color="warning" style="width:130px">Cancel</button>&nbsp;
+                    </a>
+                    <button mat-raised-button color="primary" style="width:130px" (click)="onClick($event)">Save</button>
+                </div>
+
+
+
+            </div>
+            <div *ngIf="showfailurealert" id="alertmsg" class="alert alert-danger alert-dismissible" style="align-content: center;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>One or More Fields are Missing</strong>
+            </div>
+
+
+            <div *ngIf="showsuccessalert" class="lds-hourglass" style="color: red;">Saving Data</div>
+
+
+        </div>
+    </div>
+</div>
+<!--/.col-->
+
+
+<!--row-->

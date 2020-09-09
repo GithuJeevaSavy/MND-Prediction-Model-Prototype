@@ -1,0 +1,180 @@
+<div class="card" style="text-align: center;">
+    <div class="card text-black " style="text-align: center;">
+        <strong>Patient Information</strong>
+
+    </div>
+    <div class="card-body" style="background-color:beige">
+        <div class="row">
+            <div class="form-group col-md-3">
+                <img src="../../assets/logo/user.PNG">
+                <p> Patient ID: <strong>{{patient.GeneratedID }}</strong></p>
+
+            </div>
+            <div class="form-group col-md-8 round2" style="padding-top: 40px;font-size: larger;">
+
+                <p> Hello My name is <strong>{{patient.FirstName}}  {{patient.LastName}}.</strong></p>
+                <p>I was born on <strong> {{patient.Dateofbirth}}</strong> and I am <strong> {{patient.Age}}</strong> years old.</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-md-5 round2" style="padding-top: 20px;font-size: larger;">
+                <p>I live in <strong> {{patient.Address}}, {{patient.Street}}, {{patient.City}},{{patient.Country}} </strong></p>
+            </div>
+            &nbsp; &nbsp;
+            <div class="form-group col-md-6 round2" style="padding-top: 20px;font-size: larger;">
+
+                <p> You can contact me on <strong>{{patient.Phone1}}.</strong></p>
+                <p> You can also enquire about me on <strong>{{patient.Phone2}}.</strong></p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-12" style="padding-top: 20px;font-size: larger;">
+                <p><strong> My MND Clinical visit information is listed below </strong></p>
+            </div>
+            <div class="card  col-md-12" style="background-color: #d3dceb;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p>My first clinical visit was on <strong> {{patient.Date}} </strong>.</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p>My ALS centre was <strong> {{patient.Cohort}} </strong>, which is a <strong>{{patient.Registertype}}  </strong> als centre</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p>I have a <strong> {{patient.Elescorial}} </strong> El-escorial and my sit of onset is <strong>{{patient.Siteofonset}}  </strong> </p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12 round2" *ngIf="dementia" style="padding-top: 20px;font-size: larger;">
+                            <p> <strong>I have Front Temporal Dementia  </strong> </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" *ngIf="c9orf72" style="padding-top: 20px;font-size: larger;">
+                            <p> <strong>I have the presence of C9orf72 repeat expansion  </strong> </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" *ngIf="!dementia" style="padding-top: 20px;font-size: larger;">
+                            <p> <strong>I don't have Front Temporal Dementia  </strong> </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" *ngIf="!c9orf72" style="padding-top: 20px;font-size: larger;">
+                            <p> <strong>I don't have the presence of C9orf72 repeat expansion  </strong> </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> An approximate date of the disease symptom onset was <strong>{{patient.Dateofonset}}  </strong> </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> I was diagnosed with the disease on <strong>{{patient.DateofDiagnosis}}  </strong> </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> My last visit to the clinic was on <strong>{{recentDateofentry}}  </strong> </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> My questionnaire administrator was <strong>{{recentscoringdata.Questioner}}  </strong> who is a
+                                <strong> {{recentscoringdata.Designation}} </strong>at <strong>{{recentscoringdata.QuestionerLocation}} </strong></p>
+                        </div>
+                        <div *ngIf="showsnip" class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> My Sniff Nasal Inspiratory Pressure (SNIP) values for the Occluded and Non Occluded Method are <strong>{{recentscoringdata.SNIP_O }}</strong> and <strong>{{recentscoringdata.SNIP_NO }}</strong>. </p>
+                        </div>
+                        <div *ngIf="showfvc" class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> My Forced Vital Capacity Value (FVC) is <strong><strong>{{recentscoringdata.FVC }}</strong> </strong>
+                            </p>
+                        </div>
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> My most recent ALSFRS scores for Bulbar, Motor and Respiratory regions are <strong>{{recentBulbar}}, {{recentMotor}}, 
+                                {{recentRespiratory}}   </strong> respectively thereby comprising a total score of <strong> {{recentTotal}} </strong> </p>
+                            <p> You can see all my ALSFRS scores below </p>
+
+                        </div>
+                        <div class="form-group col-md-12 round2" style="padding-top: 10px;font-size: large;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date of Entry</th>
+                                        <th>Bulbar</th>
+                                        <th>Motor</th>
+                                        <th>Respiratory</th>
+                                        <th>Total</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align: center;">
+                                    <tr *ngFor="let visit of scoringdata.reverse() ">
+                                        <td> {{ visit.Dateofentry }} </td>
+                                        <td> {{ visit.Bulbar }} </td>
+                                        <td> {{ visit.Motor }} </td>
+                                        <td> {{ visit.Respiratory }} </td>
+                                        <td> {{ visit.Total }} </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;text-align: center;">
+                            <p> Click here to get a graphical view of my scores, &nbsp;
+                                <button mat-raised-button color="primary" style="width:130px" (click)="graphicaldata()">View Graphs</button></p>
+
+                        </div>
+                        <div *ngIf="!showdateofdeath" class="form-group col-md-12 round2" style="padding-top: 20px;padding-right: 10px;text-align: center;font-size: larger;">
+                            <p> To update my ALSFRS scoring data click here &nbsp;
+                                <button mat-raised-button color="primary" style="width:130px" (click)="onClick($event)">Update Scoring</button></p>
+
+                        </div>
+
+                        <div *ngIf="!showdateofdeath" class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> To view additional information click here &nbsp;
+                                <button mat-raised-button color="primary" style="width:130px;margin-left: 35px;" (click)="toggle()">Show</button></p>
+                            <div *ngIf="show" class="row" style="padding-left: 300px;padding-top: 20px;">
+                                <label for="date-input" style="padding-right: 10px;padding-top: 10px;"><strong> Date of Death </strong></label>
+                                <div>
+                                    <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" [(ngModel)]="updateddateofdeath" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="form-group col-sm-2">
+                                    <button mat-raised-button color="success" (click)="updateDateofDeath()" id="bt">Update</button>
+
+                                </div>
+
+
+                            </div>
+                            <div class="row" id="error-container">
+                                <div *ngIf="showalert2" class="alert alert-success alert-dismissible" style="align-content: center;">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Please select Date of Death</strong>
+                                </div>
+                            </div>
+
+
+                            <div *ngIf="showalert" class="alert alert-success alert-dismissible" style="align-content: center;">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Updated Date of Death Successfully</strong>
+                            </div>
+                        </div>
+
+
+
+                        <div *ngIf="showdateofdeath" class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+                            <p> Additional Information &nbsp; </p>
+                            <div>
+                                <p> Date of Death: <strong>{{patient.Dateofdeath}}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

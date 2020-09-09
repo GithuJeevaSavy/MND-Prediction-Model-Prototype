@@ -1,0 +1,641 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <mat-card style="box-sizing: border-box;">
+                <div class="card-header" style="text-align: center;background-color:navy;color: white;">
+                    <strong>Amyotrophic Lateral Sclerosis Functional Rating Scale-Revised Form</strong>
+                </div>
+                <div class="card-body" style="text-align: left;">
+                    <div class="col-sm-12">
+
+                        <mat-card>
+                            <div class="card-header" style="text-align: center;background-color:navy;color: white;">
+
+                                <strong>Questionnaire Details</strong>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="form-group col-sm-5">
+                                    <strong>  <label for="date-input">Date of Entry</label></strong>
+                                    <input class="form-control" id="date-input" type="date" name="date-input" placeholder="date" [(ngModel)]="dateofentry" [ngModelOptions]="{standalone: true}">
+
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top: 10px;">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="name"> <strong>Questionnaire Administrator</strong> </label>
+                                        <input type="text" class="form-control" placeholder="Questionnaire Administrator Name" [(ngModel)]="questioner" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="name"><strong>Designation</strong></label>
+                                        <input type="text" class="form-control" placeholder="Designation" [(ngModel)]="designation" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <div class="form-group">
+                                        <label for="name"><strong>Location</strong></label>
+                                        <input type="text" class="form-control" placeholder="Location" [(ngModel)]="questionerlocation" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top: 10px;">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name"> <strong>Respondent</strong> </label>
+                                        <input type="text" class="form-control" placeholder="Respondent Name" [(ngModel)]="answerer" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name"><strong>Relation with Patient</strong></label>
+                                        <input type="text" class="form-control" placeholder="Respondent Relation with Patient" [(ngModel)]="relation" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </mat-card>
+
+                        <mat-card>
+                            <div class="card-header" style="text-align: center;background-color:navy;color: white;">
+
+                                <strong>Bulbar Subscore</strong>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q1. Speech</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Loss of useful speech." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios1" [(ngModel)]="alsfrs1" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Speech combined with non-vocal communication." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios1" [(ngModel)]="alsfrs1" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Intelligible with repeating" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios1" [(ngModel)]="alsfrs1" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Detectable speech disturbance" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios1" [(ngModel)]="alsfrs1" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal speech process" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios1" [(ngModel)]="alsfrs1" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q2. Salivation</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Marked drooling" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios2" [(ngModel)]="alsfrs2" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Marked excess of saliva with some drooling. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios2" [(ngModel)]="alsfrs2" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Moderately excessive saliva; may have minimal drooling." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios2" [(ngModel)]="alsfrs2" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Slight but definite excess of saliva in mouth; may have night time drooling." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios2" [(ngModel)]="alsfrs2" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios2" [(ngModel)]="alsfrs2" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q3. Swallowing</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: NPO (nothing by mouth)." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios3" id="inlineRadio0" [(ngModel)]="alsfrs3" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1:  Needs supplemental tube feeding. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios3" id="inlineRadio1" [(ngModel)]="alsfrs3" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Dietary consistency changes." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios3" id="inlineRadio2" [(ngModel)]="alsfrs3" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3:  Slight but definite excess of saliva in mouth; may have night time drooling." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios3" id="inlineRadio3" [(ngModel)]="alsfrs3" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal eating habits." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios3" id="inlineRadio4" [(ngModel)]="alsfrs3" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <footer>
+                                <div class="form-group row" style="color: red;">
+
+                                    <div class="col-md-4 col-form-label" style="text-align: center;">
+                                        <strong>  Total Bulbar Subscore</strong>
+                                    </div>
+
+                                    <div class="col-md-8 col-form-label" style="text-align: left; padding-left: 85px;">
+                                        <strong>{{calculateBulbarScore()}} </strong>
+                                    </div>
+
+                                </div>
+                            </footer>
+                        </mat-card>
+
+                        <mat-card style="text-align: left;">
+                            <div class="card-header" style="text-align: center;background-color:navy;color: white;">
+
+                                <strong>Motor Subscore</strong>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q4. Handwriting</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Unable to grip pen." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios4" id="inlineRadio0" [(ngModel)]="alsfrs4" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: No words are legible, but can still grip pen. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios4" id="inlineRadio1" [(ngModel)]="alsfrs4" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Not all words are legible." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios4" id="inlineRadio2" [(ngModel)]="alsfrs4" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3:   Slow or sloppy: all words are legible." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios4" id="inlineRadio3" [(ngModel)]="alsfrs4" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios4" id="inlineRadio4" [(ngModel)]="alsfrs4" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q5a. Utensils Handling(No Gastrostomy)</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Needs to be fed." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio0" [(ngModel)]="alsfrs5a" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Food must be cut by someone, but can still feed slowly." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio1" [(ngModel)]="alsfrs5a" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Can cut most foods, although slow and clumsy; some help needed." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio2" [(ngModel)]="alsfrs5a" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Somewhat slow and clumsy, but no help needed." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio3" [(ngModel)]="alsfrs5a" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio4" [(ngModel)]="alsfrs5a" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div style="text-align: left;padding-left: 200px;padding-bottom: 5px;"><strong>Or</strong></div>
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q5b. Utensils Handling(With Gastrostomy)</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Unable to perform any aspect of task." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio0" [(ngModel)]="alsfrs5b" value="0.0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Provides minimal assistance to caregiver." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio1" [(ngModel)]="alsfrs5b" value="1.0">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Some help needed with closures and fasteners." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio2" [(ngModel)]="alsfrs5b" value="2.0">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Clumsy, but able to perform all manipulations independently." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio3" [(ngModel)]="alsfrs5b" value="3.0">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios5" id="inlineRadio4" [(ngModel)]="alsfrs5b" value="4.0">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q6. Dressing and hygiene</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Total dependence." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios6" id="inlineRadio0" [(ngModel)]="alsfrs6" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Needs attendant for self-care." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios6" id="inlineRadio1" [(ngModel)]="alsfrs6" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Intermittent assistance or substitute methods." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios6" id="inlineRadio2" [(ngModel)]="alsfrs6" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Independent; Can complete self-care with effort or decreased efficiency." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios6" id="inlineRadio3" [(ngModel)]="alsfrs6" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal function" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios6" id="inlineRadio4" [(ngModel)]="alsfrs6" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q7. Turning in bed and adjusting bed clothes</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Helpless" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios7" id="inlineRadio0" [(ngModel)]="alsfrs7" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Can initiate, but not turn or adjust sheets alone." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios7" id="inlineRadio1" [(ngModel)]="alsfrs7" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2:  Can turn alone, or adjust sheets, but with great difficulty." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios7" id="inlineRadio2" [(ngModel)]="alsfrs7" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Somewhat slow and clumsy, but no help needed." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios7" id="inlineRadio3" [(ngModel)]="alsfrs7" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal function" triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios7" id="inlineRadio4" [(ngModel)]="alsfrs7" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q8. Walking</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: No purposeful leg movement." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios8" id="inlineRadio0" [(ngModel)]="alsfrs8" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Non-ambulatory functional movement only." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios8" id="inlineRadio1" [(ngModel)]="alsfrs8" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2:  Walks with assistance." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios8" id="inlineRadio2" [(ngModel)]="alsfrs8" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Early ambulation difficulties." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios8" id="inlineRadio3" [(ngModel)]="alsfrs8" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios8" id="inlineRadio4" [(ngModel)]="alsfrs8" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q9. Climbing Stairs</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Can not Do." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios9" id="inlineRadio0" [(ngModel)]="alsfrs9" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Needs Assistance. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios9" id="inlineRadio1" [(ngModel)]="alsfrs9" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2:  Mild unsteadiness or fatigue." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios9" id="inlineRadio2" [(ngModel)]="alsfrs9" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Slow." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios9" id="inlineRadio3" [(ngModel)]="alsfrs9" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: Normal. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios9" id="inlineRadio4" [(ngModel)]="alsfrs9" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <footer>
+                                <div class="form-group row" style="text-align: center; color: red;">
+
+                                    <div class="col-md-4 col-form-label">
+                                        <strong>  Total Motor Subscore</strong>
+                                    </div>
+
+                                    <div class="col-md-8 col-form-label" style="text-align: left;padding-left: 85px;">
+                                        <strong>{{calculateMotorScore()}} </strong>
+                                    </div>
+
+                                </div>
+                            </footer>
+                        </mat-card>
+
+                        <mat-card style="text-align: left;">
+                            <div class="card-header" style="text-align: center;background-color:navy;color: white;">
+
+                                <strong>Respiratory Subscore</strong>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q10. Dyspnea</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Significant difficulty: considering using mechanical respiratory support." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios10" id="inlineRadio0" [(ngModel)]="alsfrs10" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Occurs at rest: difficulty breathing when either sitting or lying. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios10" id="inlineRadio1" [(ngModel)]="alsfrs10" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Occurs with one or more of the following: eating, bathing, dressing." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios10" id="inlineRadio2" [(ngModel)]="alsfrs10" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Occurs when walking." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios10" id="inlineRadio3" [(ngModel)]="alsfrs10" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: None. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios10" id="inlineRadio4" [(ngModel)]="alsfrs10" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q11. Orthopnea</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Unable to sleep without mechanical assistance." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios11" id="inlineRadio0" [(ngModel)]="alsfrs11" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Can only sleep sitting up. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios11" id="inlineRadio1" [(ngModel)]="alsfrs11" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Needs extra pillows in order to sleep (more than two)." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios11" id="inlineRadio2" [(ngModel)]="alsfrs11" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Some difficulty sleeping at night due to shortness of breath, does not routinely use more than two pillows." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios11" id="inlineRadio3" [(ngModel)]="alsfrs11" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: None. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios11" id="inlineRadio4" [(ngModel)]="alsfrs11" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row" style="padding-left: 100px;">
+                                <label class="col-md-4 col-form-label" for="inline-radios">
+                <strong>Q12. Respiratory Insufficiency</strong>
+
+              </label>
+
+                                <div class="col-md-8 col-form-label">
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 0: Invasive mechanical ventilation by intubation or tracheostomy." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios12" id="inlineRadio0" [(ngModel)]="alsfrs12" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 1: Continuous use of BiPAP during day. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios12" id="inlineRadio1" [(ngModel)]="alsfrs12" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 2: Continuous use of BiPAP during the night." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios12" id="inlineRadio2" [(ngModel)]="alsfrs12" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 3: Intermittent use of BiPAP." triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios12" id="inlineRadio3" [(ngModel)]="alsfrs12" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mr-4" ngbPopover="Score 4: None. " triggers="mouseenter:mouseleave">
+                                        <input class="form-check-input" type="radio" name="inline-radios12" id="inlineRadio4" [(ngModel)]="alsfrs12" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <footer>
+                                <div class="form-group row" style="text-align: left;color: red;">
+
+                                    <div class="col-md-4 col-form-label" style="text-align: center;">
+                                        <strong>  Total Respiratory Subscore</strong>
+                                    </div>
+
+                                    <div class="col-md-8 col-form-label" style="padding-left: 85px;">
+                                        <strong>{{calculateRespiratoryScore()}} </strong>
+                                    </div>
+
+                                </div>
+                            </footer>
+                        </mat-card>
+
+
+                        <mat-card>
+                            <div class="card-header">
+
+                                <div class="form-group row">
+
+                                    <div class="col-md-4 col-form-label" style="text-align: center; color: red;font-size:larger;">
+                                        <strong> Total ALSFRS Score</strong>
+                                    </div>
+
+                                    <div class="col-md-8 col-form-label" style="text-align: left;padding-left: 85px; color: red;font-size:larger;">
+                                        <strong>{{totalScore()}} </strong>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </mat-card>
+
+                        <mat-card style="box-sizing: border-box;">
+                            <div class="card-header">
+                                <div class="form-group row">
+                                    <div class=" col-md-12 col-form-label " style="padding-left: 55px;">
+                                        <label for=" name "> <strong>Comments</strong> </label>
+                                        <textarea rows="2 " cols="120 " style="width: 100%;" [(ngModel)]="comments"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row" style="background-color:navy;color: white;">
+
+                                    <div *ngIf="showsnip" class="col-md-2 col-form-label" style="text-align: center;padding-top: 15px;">
+                                        <strong>
+                                            <label>SNIP (Occluded Method)</label>
+                                        </strong>
+                                    </div>
+                                    <div *ngIf="showsnip" class=" col-md-2 col-form-label " style="text-align: center;padding-top: 10px;">
+                                        <input type="text" class="form-control" placeholder="" [(ngModel)]="SNIP_O" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                    <div *ngIf="showsnip" class="col-md-2 col-form-label" style="text-align: center;padding-top: 15px;">
+                                        <strong>
+                                            <label>SNIP (Non Occluded Method)</label>
+                                        </strong>
+                                    </div>
+                                    <div *ngIf="showsnip" class=" col-md-2 col-form-label " style="text-align: center;padding-top: 10px;">
+                                        <input type="text" class="form-control" placeholder="" [(ngModel)]="SNIP_NO" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                    <div *ngIf="showfvc" class="col-md-3 col-form-label" style="text-align: center;padding-top: 15px;">
+                                        <strong>
+                                            <label>FVC</label>
+                                        </strong>
+                                    </div>
+                                    <div *ngIf="showfvc" class=" col-md-3 col-form-label " style="text-align: center;padding-top: 10px;">
+                                        <input type="text" class="form-control" placeholder="" [(ngModel)]="FVC" [ngModelOptions]="{standalone: true}">
+                                    </div>
+
+                                    <div *ngIf="showsnip" class="col-md-4 col-form-label" style="text-align: right;padding-top: 10px;">
+                                        <!-- <a routerLink="/detailsform"><button mat-raised-button color="warning">Cancel</button></a> &nbsp; -->
+                                        <button mat-raised-button color="primary" (click)="onClick($event)">Submit</button>
+
+                                    </div>
+                                    <div *ngIf="showfvc" class="col-md-6 col-form-label" style="text-align: right;padding-left: 150px;">
+                                        <!-- <a routerLink="/detailsform"><button mat-raised-button color="warning">Cancel</button></a> &nbsp; -->
+                                        <button mat-raised-button color="primary" (click)="onClick($event)">Submit</button>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div *ngIf="showfailurealert" id="alertmsg" class="alert alert-danger alert-dismissible" style="align-content: center;">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>One or More Fields are Missing</strong>
+                            </div>
+                        </mat-card>
+
+                    </div>
+
+
+                </div>
+                <div *ngIf="showsuccessalert" class="lds-hourglass" style="color: red;">Saving Data</div>
+
+
+                <footer style="opacity: 0.2; "> <strong>Reference: </strong>
+                    <a target="_blank " href="https://www.encals.eu/wp-content/uploads/2016/09/ALSFRS-SOP-ENCALS-presentation.pdf ">https://www.encals.eu/wp-content/uploads/2016/09/ALSFRS-SOP-ENCALS-presentation.pdf</a>
+                </footer>
+            </mat-card>
+
+
+        </div>
+        <!--/.col-->
+
+    </div>
+    <!--/.row-->
+
+</div>

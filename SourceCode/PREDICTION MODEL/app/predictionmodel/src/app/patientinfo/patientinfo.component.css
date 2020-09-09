@@ -1,0 +1,31 @@
+.round3 {
+    border: 2px solid red;
+    border-radius: 12px;
+    border-width: 20cm;
+}
+
+.round2 {
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+    border: 1px solid black;
+}

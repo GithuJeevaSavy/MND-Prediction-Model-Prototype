@@ -1,0 +1,10 @@
+.row:hover {
+    color: #5989e2;
+    background-color: rgb(248, 244, 244);
+}
+
+.mat-form-field+.mat-form-field {
+    margin-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

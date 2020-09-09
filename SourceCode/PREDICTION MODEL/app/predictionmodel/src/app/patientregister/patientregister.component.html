@@ -1,0 +1,71 @@
+<div class="card" style="background-color: whitesmoke;">
+    <div class="card-header" style="text-align: center;background-color: navy;color: white;">
+        <h2><strong>Patients List</strong></h2>
+    </div>
+    <!-- <div class="spinner-border text-light"></div> -->
+    <!-- rgb(156, 183, 218) -->
+    <div class="card-body" style="width:auto; height: auto;">
+        <div class="container">
+            <div class="row" style="padding-left: 300px;">
+                <div class="form-group col-sm-7">
+                    <label for="ccmonth"><strong>Select Cohort</strong></label>
+
+                    <select class="form-control" id="cohort" [(ngModel)]="selectedcohort" (change)="selection()" [ngModelOptions]="{standalone: true}">
+              <option>Leuven, Belgium</option>
+              <option>Limoges, France</option>
+              <option>Tours, France</option>
+              <option>Hannover, Germany</option>
+              <option>Jena, Germany</option>
+              <option>Dublin, Ireland</option>
+              <option>Torino, Italy</option>
+              <option>Utrecht, Netherlands</option>
+              <option>Lisbon, Portugal</option>
+              <option>St Gallen, Switzerland</option>
+              <option>London, UK</option>
+              <option>Sheffield, UK</option>
+              <option>Oxford, UK</option>
+
+            </select>
+                </div>
+            </div>
+            <!-- <h2>List Group With Linked Items</h2> -->
+            <div class="list-group" *ngIf="patients.length === 0">
+                <tr>No records found</tr>
+            </div>
+
+            <div class="list-group" name="list" *ngFor="let patient of patients | filter:selectedcohort">
+                <div class="list-group-item list-group-item-action" (click)="getID(patient.id)"><strong>{{patient.name}}&nbsp;&#10145; </strong> Last Clinical visit was on
+                    <strong>{{patient.recentDateofentry}}.  </strong> The ALSFRS scores for Bulbar, Motor, Respiratory and Total are
+                    <strong>{{patient.recentBulbar}}, {{patient.recentMotor}}, {{patient.recentRespiratory}} and {{patient.recentTotal}}.</strong>
+
+                    <!-- <div class="form-group col-md-12 round2" style="padding-top: 10px;font-size: large;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date of Entry</th>
+                                    <th>Bulbar</th>
+                                    <th>Motor</th>
+                                    <th>Respiratory</th>
+                                    <th>Total</th>
+
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center;">
+                                <tr *ngFor="let visit of selectedScoringData">
+                                    <td> {{ visit.Dateofentry }} </td>
+                                    <td> {{ visit.Bulbar }} </td>
+                                    <td> {{ visit.Motor }} </td>
+                                    <td> {{ visit.Respiratory }} </td>
+                                    <td> {{ visit.Total }} </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<mat-card>
+    <div class="card-header" style="text-align: center;background-color:navy;color: white;">
+
+        <strong>Graphical View of the Scores</strong>
+
+    </div>
+    <div class="row">
+
+        <div>
+            <mat-spinner *ngIf="showspinner"></mat-spinner>
+
+        </div>
+
+        <div *ngIf="comparisongraph" style="padding-left: 200px;">
+            <google-chart style="text-align: center;" #chart [title]="title2" [type]="type2" [data]="LineData" [columns]="columnNames2" [options]="options" [width]="width" [height]="height">
+            </google-chart>
+        </div>
+        <div *ngIf="comparisongraph" style="padding-left: 350px;color: green;padding-top: 30px;">
+
+            <strong>Individual Graphs as per Clinical Visit</strong>
+
+        </div>
+
+        <div style="padding-left: 200px;">
+            <google-chart style="text-align: center;" *ngFor="let data of allData" #chart [title]="data.title" [type]="type" [data]="data.chartData" [columns]="columnNames" [options]="options" [width]="width" [height]="height">
+            </google-chart>
+        </div>
+
+    </div>
+    <div class="card-footer" style="text-align: center;background-color: navy; color: white;">
+        <div class="form-group col-md-12 round2" style="padding-top: 20px;font-size: larger;">
+            <button mat-raised-button color="#decd3a" style="width:200px" (click)="gobackfromgraphview()">Back to Paitent Information</button>
+
+        </div>
+    </div>
+
+</mat-card>

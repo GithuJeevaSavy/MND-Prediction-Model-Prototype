@@ -1,0 +1,30 @@
+<body>
+
+    <section class="login-page">
+        <form>
+            <div class="box">
+                <div class="form-head">
+                    <h2>Member Login</h2>
+                </div>
+                <div class="form-body">
+                    <input type="text" placeholder="User Name" [(ngModel)]="details.username" [ngModelOptions]="{standalone: true}">
+                    <input type="Password" placeholder="Password" [(ngModel)]="details.password" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-footer">
+                    <button type="submit" (click)="onClick($event)">Sign In</button>
+                </div>
+
+            </div>
+            <div *ngIf="showfailurealert" id="alertmsg" class="alert alert-danger alert-dismissible" style="text-align: center;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Incorrect Username or Password</strong>
+            </div>
+            <div *ngIf="showsuccessalert" class="alert alert-success alert-dismissible" style="text-align: center;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Login Successful!</strong>
+            </div>
+        </form>
+    </section>
+
+
+</body>

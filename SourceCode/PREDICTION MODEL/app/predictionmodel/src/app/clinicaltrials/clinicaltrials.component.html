@@ -1,0 +1,99 @@
+<div class="card" style="background-color: whitesmoke;">
+    <div class="card-header" style="text-align: center;background-color: navy;color: white;">
+        <h2><strong>Clinical Trial 1</strong></h2>
+    </div>
+    <!-- <div class="spinner-border text-light"></div> -->
+
+    <div class="card-body" style="width:auto; height: auto;">
+        <div style="opacity: 1; ">
+            <p>
+                A prospective, multicenter, randomised, double-blind, placebo-controlled, parallel groups, phase 3 study to compare the efficacy and safety of masitinib in combination with Riluzole versus placebo in combination with Riluzole in the treatment of patients
+                suffering from Amyotrophic Lateral Sclerosis (ALS).
+            </p>
+            <p>
+                Here is an example of one clinical trial. Recruitment to this trial may be improved due to aggregation of data from the European registers.
+            </p>
+            <strong>Complete Details can be found on:    </strong>&nbsp;
+            <a target="_blank " href="https://www.clinicaltrialsregister.eu/ctr-search/trial/2019-001862-13/IE#C ">https://www.clinicaltrialsregister.eu/ctr-search/trial/2019-001862-13/IE#C</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-raised-button color="primary" style="width:130px;" (click)="viewtrial()">view</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="card" style="background-color: whitesmoke;">
+    <div class="card-header" style="text-align: center;background-color: navy;color: white;">
+        <h2><strong>Other Data Joining Examples</strong></h2>
+    </div>
+    <!-- <div class="spinner-border text-light"></div> -->
+
+    <div class="card-body" style="width:auto; height: auto;">
+
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="malelist()">
+                        <strong>          List of All Male Patients 
+                    </strong>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div class="row">
+
+                    <table class="table  " style="color: blue;">
+
+                        <tbody *ngIf="malepatients.length === 0">
+                            <tr>No records found</tr>
+                        </tbody>
+                        <tbody *ngIf="malepatients.length > 0">
+                            <tr *ngFor="let patient of malepatients;">
+                                <td (click)="getID(patient.id)"><strong>{{patient.name}}</strong></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        &nbsp;
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="irishpatient()">
+                        <strong> 
+                            Patients in Ireland
+                    </strong>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div class="row">
+
+                    <table class="table  " style="color: blue;">
+
+                        <tbody *ngIf="irishpatients.length === 0">
+                            <tr>No records found</tr>
+                        </tbody>
+                        <tbody *ngIf="irishpatients.length > 0">
+                            <tr *ngFor="let patient of irishpatients;">
+                                <td (click)="getID(patient.id)"><strong>{{patient.name}}</strong></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        &nbsp;
+
+
+
+    </div>
+</div>

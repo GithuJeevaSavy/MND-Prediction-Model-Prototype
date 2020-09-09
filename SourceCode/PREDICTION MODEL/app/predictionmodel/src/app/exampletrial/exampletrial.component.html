@@ -1,0 +1,170 @@
+<div class="card" style="background-color: whitesmoke;">
+    <div class="card-header" style="text-align: center; background-color: navy;color: white;">
+        <h2><strong>Principle Inclusion Criteria</strong></h2>
+    </div>
+
+    <div class="card-body" style="width:auto; height: auto;">
+
+
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="criteria4()">
+                        <strong>                        
+                            Patient, male or female, diagnosed with laboratory supported probable, clinically probable or definite ALS according to the World Federation of Neurology Revised El Escorial criteria                    </strong>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div class="row">
+
+                    <table class="table  " style="color: blue; background-color: rgb(248, 239, 239);">
+
+                        <tbody *ngIf="criteria4list.length === 0">
+                            <tr>No records found</tr>
+                        </tbody>
+                        <tbody *ngIf="criteria4list.length > 0">
+                            <tr *ngFor="let patient of criteria4list;">
+                                <td (click)="getID(patient.id)"><strong>{{patient.name}}</strong></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        &nbsp;
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="criteria1()">
+                        <strong>                        
+                            Patients Aged Between 18 and 75 Years of Age                    </strong>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div class="row">
+
+                    <table class="table  " style="color: blue; background-color: rgb(248, 239, 239);">
+                        <div *ngIf="showspinner" class="spinner-border text-danger"></div>
+
+                        <tbody *ngIf="criteria1list.length === 0">
+                            <tr>No records found</tr>
+                        </tbody>
+                        <tbody *ngIf="criteria1list.length > 0">
+                            <tr *ngFor="let patient of criteria1list;">
+                                <td (click)="getID(patient.id)"><strong>{{patient.name}}</strong></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+        &nbsp;
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="criteria2()">
+                        <strong>          Patient with an ALS disease duration from diagnosis no longer than 24 months at screening 
+                    </strong>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div class="row">
+
+                    <table class="table  " style="color: blue;background-color:rgb(248, 239, 239);">
+
+                        <tbody *ngIf="criteria2list.length === 0">
+                            <tr>No records found</tr>
+                        </tbody>
+                        <tbody *ngIf="criteria2list.length > 0">
+                            <tr *ngFor="let patient of criteria2list;">
+                                <td (click)="getID(patient.id)"><strong>{{patient.name}}</strong></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        &nbsp;
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="criteria3()">
+                        <strong> 
+                        Patient with an ALSFRS-R total score of at least 26 at screening with following conditions:- at least 3 on item #3 and at least 2 on each of the other 11 items (i.e. item #1, #2, #4, #5a or #5b, #6, #7, #8, #9, #10, #11 and #12)
+                    </strong>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div class="row">
+
+                    <table class="table  " style="color: blue;background-color: rgb(248, 239, 239);">
+
+                        <tbody *ngIf="criteria3list.length === 0">
+                            <tr>No records found</tr>
+                        </tbody>
+                        <tbody *ngIf="criteria3list.length > 0">
+                            <tr *ngFor="let patient of criteria3list;">
+                                <td (click)="getID(patient.id)"><strong>{{patient.name}}</strong></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        &nbsp;
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="totalcriteria()">
+                        <strong>                        
+                            Patients satisfying all the above mentioned inclusion criteria and are eligible for the trial                    </strong>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <div class="row">
+
+                    <table class="table  " style="color: blue; background-color: rgb(248, 239, 239);">
+
+                        <div *ngIf="showspinner" class="spinner-border text-danger"></div>
+
+                        <tbody *ngIf="totalcriterialist.length === 0">
+                            <tr>No records found</tr>
+                        </tbody>
+                        <tbody *ngIf="totalcriterialist.length > 0">
+                            <tr *ngFor="let patient of totalcriterialist;">
+                                <td (click)="getID(patient.id)"><strong>{{patient.name}}</strong></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </div>
+
+
+
+</div>
